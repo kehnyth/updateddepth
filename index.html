@@ -2597,7 +2597,7 @@
         <div class="chart-header">
             <div>
                 <div class="chart-title">Live Trading Performance</div>
-                <div class="chart-subtitle">Real-time account value tracking • Starting Oct 23, 2025 • Starting balance: $40</div>
+                <div class="chart-subtitle">Real-time account value tracking • Starting Oct 26, 2025 • Starting balance: $40</div>
             </div>
             <div class="chart-legend-live" id="chart-legend-live"></div>
         </div>
@@ -7799,29 +7799,30 @@ What's your investment timeline and position sizing strategy?`
         };
 
         const dates = [
-            'Oct 23 10:00',
-            'Oct 23 19:00',
-            'Oct 24 04:00',
-            'Oct 24 13:00',
-            'Oct 24 22:00',
-            'Oct 25 07:00',
-            'Oct 25 16:00',
-            'Oct 26 01:00',
             'Oct 26 10:00',
-            'Oct 26 19:00',
-            'Oct 27 04:00',
-            'Oct 27 13:00',
-            'Oct 27 22:00',
+            'Oct 26 15:00',
+            'Oct 26 20:00',
+            'Oct 27 01:00',
+            'Oct 27 06:00',
+            'Oct 27 11:00',
+            'Oct 27 16:00',
+            'Oct 27 21:00',
+            'Oct 28 02:00',
             'Oct 28 07:00',
-            'Oct 28 16:00',
-            'Oct 29 01:00',
-            'Oct 29 10:00',
-            'Oct 29 19:00',
+            'Oct 28 12:00',
+            'Oct 28 17:00',
+            'Oct 28 22:00',
+            'Oct 29 03:00',
+            'Oct 29 08:00',
+            'Oct 29 13:00',
+            'Oct 29 18:00',
+            'Oct 29 23:00',
             'Oct 30 04:00',
-            'Oct 30 13:00',
-            'Oct 30 22:00',
-            'Oct 31 07:00',
-            'Oct 31 16:00'
+            'Oct 30 09:00',
+            'Oct 30 14:00',
+            'Oct 30 19:00',
+            'Oct 31 00:00',
+            'Oct 31 05:00'
         ];
 
         const dates1d = [
@@ -8319,12 +8320,12 @@ What's your investment timeline and position sizing strategy?`
 
         function generateTimeLabels() {
             const labels = [];
-            // Start from Oct 23, 2025 at 10:00
-            const startDate = new Date('2025-10-23T10:00:00');
+            // Start from Oct 26, 2025 at 10:00
+            const startDate = new Date('2025-10-26T10:00:00');
             
-            // Generate 24 labels with approximately 8.5 hour intervals to span from Oct 23 to Oct 31
-            const totalHours = 8 * 24; // 8 days
-            const intervalHours = totalHours / 23; // ~8.35 hours per interval
+            // Generate 24 labels with approximately 5 hour intervals to span from Oct 26 to Oct 31
+            const totalHours = 5 * 24; // 5 days
+            const intervalHours = totalHours / 23; // ~5.22 hours per interval
             
             for (let i = 0; i < 24; i++) {
                 const time = new Date(startDate.getTime() + (i * intervalHours * 60 * 60 * 1000));
@@ -8604,7 +8605,7 @@ What's your investment timeline and position sizing strategy?`
             }
             
             liveChart.update('none');
-        }, 900000); // Update every 15 minutes (900000 milliseconds)
+        }, 300000); // Update every 5 minutes (300000 milliseconds)
 
         // Live Crypto Price Updates using AsterDEX API with authentication
         const ASTER_API_KEY = 'fb370278c3b9721c130338bb62c93501cc883c9bf1dc3824d5fdafe19ee3628b';
